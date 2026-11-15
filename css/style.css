@@ -273,32 +273,6 @@ nav.main-nav a.is-active { color: var(--color-gold); }
   100% { opacity: 0; top: 6px; }
 }
 
-/* ============ Steam divider (signature element) ============ */
-.steam-divider {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-  color: var(--color-gold);
-}
-.steam-divider svg { width: 120px; height: 40px; overflow: visible; }
-.steam-divider path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  opacity: 0.75;
-}
-.steam-divider path.s2 { animation: rise 4s ease-in-out infinite; }
-.steam-divider path.s1 { animation: rise 4s ease-in-out infinite 0.6s; }
-.steam-divider path.s3 { animation: rise 4s ease-in-out infinite 1.2s; }
-@keyframes rise {
-  0%, 100% { transform: translateY(0); opacity: 0.65; }
-  50% { transform: translateY(-4px); opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .steam-divider path { animation: none !important; }
-}
-
 /* ============ Intro section ============ */
 .intro {
   padding: 96px 0 80px;
@@ -328,20 +302,13 @@ nav.main-nav a.is-active { color: var(--color-gold); }
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   aspect-ratio: 4/5;
-  background: linear-gradient(160deg, var(--color-herb), #26361f);
+  background: var(--color-rice-dark);
 }
-.intro-figure .placeholder-label {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: rgba(244,238,223,0.85);
-  font-size: 0.85rem;
-  padding: 24px;
-  border: 1px dashed rgba(244,238,223,0.4);
-  margin: 14px;
+.intro-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 38% center; /* keeps the pho bowl centered when cropped to portrait */
 }
 
 /* ============ CTA section ============ */
@@ -547,35 +514,6 @@ nav.main-nav a.is-active { color: var(--color-gold); }
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-.promo-banner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  max-width: 640px;
-  margin: 0 auto 40px;
-  text-align: center;
-  background: #F8E9B0;
-  border: 1px solid #E8CE84;
-  border-radius: var(--radius-plaque);
-  padding: 12px 20px;
-}
-.promo-banner .promo-tag {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-  color: var(--color-white);
-  background: var(--color-rust);
-  border-radius: 999px;
-  padding: 5px 16px;
-}
-.promo-banner span.promo-text {
-  font-size: 0.9rem;
-  color: var(--color-ink-soft);
 }
 
 .menu-footnote {
